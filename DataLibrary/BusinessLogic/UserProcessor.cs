@@ -30,7 +30,7 @@ namespace DataLibrary.BusinessLogic
         public static List<UserModel> LoadUsers()
         {
             string sql = @"SELECT Id, UserId, Firstname, LastName, EmailAddress
-                        from dbo.Users;";
+                        from dbo.UserTable;";
             return SQLDataAccess.LoadData<UserModel>(sql);
         }
     }

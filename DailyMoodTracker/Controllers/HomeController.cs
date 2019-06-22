@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DataLibrary;
-using static DataLibrary.BusinessLogic.UserProcessor;
+using static DataLibrary.BusinessLogic.UserProcessor; //call create user succinctly
 
 namespace DailyMoodTracker.Controllers
 {
@@ -28,6 +28,31 @@ namespace DailyMoodTracker.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+
+        public ActionResult ViewUsers()
+        {
+            ViewBag.Message = "User List";
+
+            var data = LoadUsers();
+
+            List<UserModel> users = new List<UserModel>();
+
+            foreach (var row in data)
+            {
+                users.Add(new UserModel
+                {
+                    UserId = row.UserId,
+                    FirstName = row.FirstName,
+                    LastName = row.LastName,
+                    EmailAddress = row.EmailAddress,
+                    ConfirmEmail = row.EmailAddress
+                }) ; 
+
+            }
+
+            return View(users);
         }
 
         public ActionResult SignUp()

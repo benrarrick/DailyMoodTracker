@@ -58,11 +58,15 @@
     <Folder Include="Properties" />
     <Folder Include="dbo" />
     <Folder Include="dbo\Tables" />
+    <Folder Include="Publish Profiles\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\UserTable.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="MoodTrackerDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Publish Profiles\MoodTrackerDB.publish.xml" />
   </ItemGroup>
 </Project>

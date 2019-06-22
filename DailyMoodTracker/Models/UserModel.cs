@@ -6,6 +6,8 @@ using System.Web;
 
 namespace DailyMoodTracker.Models
 {
+    //Front end User Display Model
+
     public class UserModel
     {
         [Display(Name = "User ID")]

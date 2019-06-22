@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DailyMoodTracker.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +24,26 @@ namespace DailyMoodTracker.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult SignUp()
+        {
+            ViewBag.Message = "User Sign Up";
+
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SignUp(UserModel model)
+        {
+            // Ensure Data input is valid on the backend
+            if (ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
 
             return View();
         }
